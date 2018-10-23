@@ -2,6 +2,7 @@ package SpringRestApiFirebaseTodoApp.Model;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
@@ -11,7 +12,7 @@ public class User  {
     private String email;
     private String password;
     private String passwordConfirm;
-
+    private Set<TaskListEntity> taskListEntities;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
