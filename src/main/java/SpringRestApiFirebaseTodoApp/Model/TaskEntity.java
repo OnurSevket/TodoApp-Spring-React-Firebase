@@ -11,6 +11,17 @@ public class TaskEntity implements Serializable {
     private boolean Status;
 /*Each to-do item should have a name, description, deadline, and status.*/
 
+    public TaskEntity() {
+    }
+
+    public TaskEntity(Long id, String name, String description, Date deadline, boolean status) {
+        Id = id;
+        Name = name;
+        Description = description;
+        Deadline = deadline;
+        Status = status;
+    }
+
     public Long getTaskId(){
         return Id;
     }
@@ -43,5 +54,14 @@ public class TaskEntity implements Serializable {
         this.Deadline = taskDeadLine;
     }
 
-
+    @Override
+    public String toString() {
+        return "TaskEntity{" +
+                "Id=" + Id +
+                ", Name='" + Name + '\'' +
+                ", Description='" + Description + '\'' +
+                ", Deadline=" + Deadline +
+                ", Status=" + Status +
+                '}';
+    }
 }

@@ -14,6 +14,18 @@ public class User  {
     private String passwordConfirm;
     private Set<TaskListEntity> taskListEntities;
 
+    public User() {
+    }
+
+    public User(Long id, String username, String email, String password, String passwordConfirm, Set<TaskListEntity> taskListEntities) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.passwordConfirm = passwordConfirm;
+        this.taskListEntities = taskListEntities;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
@@ -49,5 +61,15 @@ public class User  {
         this.passwordConfirm = passwordConfirm;
     }
 
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", passwordConfirm='" + passwordConfirm + '\'' +
+                ", taskListEntities=" + taskListEntities +
+                '}';
+    }
 }
